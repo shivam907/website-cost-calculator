@@ -10,6 +10,7 @@ nav {
   position: fixed;
   width: 100%;
   padding: 3rem 3rem;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -115,6 +116,9 @@ nav ul ion-icon {
   width: 120rem;
   margin: 10rem auto;
   height: 200vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* opacity: 0; */
 }
 
 .navbar.scrolled {
@@ -122,4 +126,97 @@ nav ul ion-icon {
   padding: 1.5rem 3rem;
   /* backdrop-filter: blur(10px); */
   transition: 0.5s ease-in-out;
+}
+main {
+  /* width: 60%; */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  /* display: grid; */
+  /* gap: 5rem; */
+  /* background-color: #fde801; */
+}
+
+aside {
+  /* width: 100%; */
+  position: sticky;
+  top: 10rem;
+  height: 30vh;
+  background-color: #303035;
+}
+
+main h1 {
+  font-size: 2.2rem;
+  color: #303035;
+  font-weight: 500;
+  font-family: "Manrope";
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.options {
+  display: flex;
+  gap: 1rem;
+}
+
+.options button {
+  background-color: transparent;
+  padding: 1.2rem 2.4rem;
+  min-width: 10rem;
+  color: #6b6d6f;
+  font-size: 1.4rem;
+  border: 1px solid #6b6d6f;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.options button:hover {
+  color: orangered;
+  border: 1px solid orangered;
+}
+
+.btnFocus {
+  background-color: #47d417 !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.space {
+  height: 100vh;
+}
+
+.yes {
+  /* margin-top: -2rem; */
+  display: flex;
+  gap: 1rem;
+}
+
+.yes h2 {
+  color: #6b6d6f;
+  font-size: 1.6rem;
+}
+
+.no {
+  align-self: center;
+  padding: 2px 20px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #303035;
+  background-color: transparent;
+  border: 1px solid #303035;
+  border-radius: 3px;
+}
+.nocus {
+  background-color: #303035;
+  color: #fff;
+}
+
+.hide {
+  display: none;
 }
