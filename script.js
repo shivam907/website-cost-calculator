@@ -69,6 +69,15 @@ copy.forEach((i) => {
     i.classList.toggle("btnFocus");
   });
 });
+const ecomm = document.querySelectorAll(".ecomm .active");
+// console.log(type);
+ecomm.forEach((i) => {
+  i.addEventListener("click", (el) => {
+    el.preventDefault();
+    ecomm.forEach((i) => i.classList.remove("btnFocus"));
+    i.classList.toggle("btnFocus");
+  });
+});
 const responsive = document.querySelectorAll(".yes .no");
 // console.log(type);
 responsive.forEach((i) => {
