@@ -201,9 +201,10 @@ main h1 {
   background-color: transparent;
   padding: 1.2rem 2.4rem;
   min-width: 10rem;
+  border: none;
   color: #6b6d6f;
   font-size: 1.4rem;
-  border: 1px solid #6b6d6f;
+  outline: 1px solid #6b6d6f;
   cursor: pointer;
   border-radius: 5px;
   font-weight: 500;
@@ -212,9 +213,10 @@ main h1 {
   background-color: transparent;
   padding: 1.2rem 2.4rem;
   min-width: 10rem;
+  border: none;
   color: #6b6d6f;
   font-size: 1.4rem;
-  border: 1px solid #6b6d6f;
+  outline: 1px solid #6b6d6f;
   cursor: pointer;
   border-radius: 5px;
   font-weight: 500;
@@ -222,16 +224,18 @@ main h1 {
 
 .options button:hover {
   color: orangered;
-  border: 1px solid orangered;
+  outline: none;
+  outline: 1px solid orangered;
 }
 .activ:hover {
   color: orangered;
-  border: 1px solid orangered;
+  outline: none;
+  outline: 1px solid orangered;
 }
 .btnFocus {
   background-color: #47d417 !important;
   color: #fff !important;
-  border: none !important;
+  outline: none !important;
 }
 
 .space {
@@ -281,8 +285,9 @@ main h1 {
   padding: 1.2rem 2.4rem;
   min-width: 10rem;
   color: #6b6d6f;
+  border: none;
   font-size: 1.4rem;
-  border: 1px solid #6b6d6f;
+  outline: 1px solid #6b6d6f;
   cursor: pointer;
   border-radius: 5px;
   font-weight: 500;
