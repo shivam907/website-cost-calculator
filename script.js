@@ -23,11 +23,11 @@ let price = [
     "50+": "30000+",
   },
   {
-    Yes: 500,
+    Yes: "500 / Page",
   },
   {
     "Simple & Attractive": 500,
-    "Moderately Styling": 2000,
+    "Moderately Styled": 2000,
     "High End": 5000,
     "World Class": 20000,
   },
@@ -60,6 +60,15 @@ type.forEach((i) => {
   i.addEventListener("click", (el) => {
     el.preventDefault();
     type.forEach((i) => i.classList.remove("btnFocus"));
+    i.classList.toggle("btnFocus");
+  });
+});
+const extra = document.querySelectorAll(".extra .activ");
+// console.log(type);
+extra.forEach((i) => {
+  i.addEventListener("click", (el) => {
+    el.preventDefault();
+    // type.forEach((i) => i.classList.remove("btnFocus"));
     i.classList.toggle("btnFocus");
   });
 });
@@ -153,6 +162,7 @@ document.querySelectorAll(".pages .active").forEach((i) => {
 document.querySelectorAll(".yes .no").forEach((i) => {
   i.addEventListener("click", () => {
     if (i.textContent == "No") {
+      selected[2] = "";
       return;
     } else {
       selected[2] = "Responsiveness: " + i.textContent;
@@ -171,6 +181,7 @@ document.querySelectorAll(".cms .active").forEach((i) => {
   i.addEventListener("click", () => {
     if (i.textContent == "Not Required") {
       // continue;
+      selected[4] = "";
       return;
     } else {
       selected[4] = "Panel: " + i.textContent;
@@ -183,6 +194,7 @@ document.querySelectorAll(".data .active").forEach((i) => {
     // selected[4] = i.textContent;
     if (i.textContent == "Not Required") {
       // continue;
+      selected[5] = "";
       return;
     } else {
       selected[5] = "Database: " + i.textContent;
@@ -195,6 +207,7 @@ document.querySelectorAll(".seo .active").forEach((i) => {
     // selected[5] = i.textContent;
     if (i.textContent == "Not Required") {
       // continue;
+      selected[6] = "";
       return;
     } else {
       selected[6] = "SEO: " + i.textContent;
@@ -207,6 +220,7 @@ document.querySelectorAll(".copy .active").forEach((i) => {
     // selected[6] = i.textContent;
     if (i.textContent == "Not Required") {
       // continue;
+      selected[7] = "";
       return;
     } else {
       selected[7] = "Copywriting: " + i.textContent;
@@ -220,19 +234,64 @@ document.querySelectorAll("button").forEach((i) => {
   i.addEventListener("click", () => {
     document.querySelector(".summary").innerHTML = "";
     console.log("ys");
+    let cost = 0;
     selected.forEach((j) => {
-      console.log();
-      let currentPrice = price[selected.indexOf(j)];
-      let val = j.split(":").slice(1)[0];
-      console.log(val);
-      document.querySelector(".summary").insertAdjacentHTML(
-        "beforeend",
-        `<div class="webSummary">
+      if (j != "") {
+        let ol = 0;
+        console.log();
+        let currentPrice = price[selected.indexOf(j)];
+        //   let j.split(":").slice(1)[0].slice(1) = j.split(":").slice(1)[0].slice(1);
+        //   console.log(typeof currentPrice[j.split(":").slice(1)[0].slice(1)]);
+
+        if (
+          typeof currentPrice[j.split(":").slice(1)[0].slice(1)] == "string"
+        ) {
+          console.log(ol, "yesss");
+          if (
+            currentPrice[j.split(":").slice(1)[0].slice(1)].includes("Page")
+          ) {
+            //   console.log("selected: ", selected[1]);
+            //   console.log(selected[1].split(": ")[1].split("-")[0]);
+            //   console.log("Page: ", selected[1]);
+            if (selected[1].includes("+")) {
+              console.log(Number(selected[1].split("+")[0]));
+              cost += 500 * Number(selected[1].split(": ")[1].split("+")[0]);
+            } else {
+              cost += 500 * Number(selected[1].split(": ")[1].split("-")[0]);
+            }
+          } else if (
+            currentPrice[j.split(":").slice(1)[0].slice(1)].includes("+")
+          ) {
+            console.log(currentPrice[j.split(":").slice(1)[0].slice(1)]);
+            cost += Number(
+              currentPrice[j.split(":").slice(1)[0].slice(1)].split("+")[0]
+            );
+            //   console.log("+", selected[1].split(": ")[1].split("+")[0]);
+            // selected[selected.indexOf(j)].split(": ")[1].split("+")[0];
+            // cost+=selected(": ")[1].split("+")
+            //   cost += Number(currentPrice[j.split(":").slice(1)[0].slice(1)].split("+")[0]);
+          }
+          //  else {
+          // }
+          ol += 1;
+        } else {
+          cost += Number(currentPrice[j.split(":").slice(1)[0].slice(1)]);
+        }
+        //   console.log(currentPrice[j.split(":").slice(1)[0].slice(1)]);
+        //   console.log(j.split(":").slice(1)[0].slice(1).slice(1));
+        //   for (let l of j.split(":").slice(1)[0].slice(1)) {
+        //     console.log(l);
+        //   }
+        document.querySelector(".summary").insertAdjacentHTML(
+          "beforeend",
+          `<div class="webSummary">
                 <p>${j}</p>
-                <p>1000 rs</p>
+                <p>${currentPrice[j.split(":").slice(1)[0].slice(1)]} rs</p>
            </div>
             `
-      );
+        );
+        console.log("Cost ", cost);
+      }
     });
   });
 });
