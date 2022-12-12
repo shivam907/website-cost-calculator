@@ -35,7 +35,7 @@ nav ul a {
   letter-spacing: 0.1rem;
 }
 .hero {
-  background: url("/img/hero.jpeg");
+  background: url("img/hero.jpeg");
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
