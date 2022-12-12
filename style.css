@@ -142,7 +142,7 @@ aside {
   /* width: 100%; */
   position: sticky;
   top: 10rem;
-  height: auto;
+  height: fit-content;
   /* background-color: #303035; */
   padding: 3rem;
   border: 1px solid #00000030;
