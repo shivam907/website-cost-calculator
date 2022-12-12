@@ -153,6 +153,11 @@ aside h1 {
   font-weight: 400;
   padding-bottom: 1rem;
 }
+aside h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
+}
 .webSummary {
   display: flex;
   justify-content: space-between;
@@ -281,4 +286,77 @@ main h1 {
   cursor: pointer;
   border-radius: 5px;
   font-weight: 500;
+}
+.cost {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  font-weight: 500;
+  color: #303035;
+}
+.line {
+  margin-top: 3rem;
+}
+
+.contactUs {
+  width: 125rem;
+  margin: 7rem auto;
+  padding: 10rem 5rem;
+  display: flex;
+  flex-direction: column;
+  /* gap: 10rem; */
+  /* justify-content: space-between; */
+  background-color: #101010;
+  border-radius: 12px;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
+}
+.contact {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.contactUs input {
+  width: 25rem;
+  height: 4rem;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  font-size: 1.4rem;
+}
+input::placeholder {
+  color: #fff !important;
+}
+
+.contactUs input:focus {
+  border-bottom: 1px solid purple;
+}
+.contactUs button {
+  padding: 1.3rem 3.7rem;
+  border: none;
+  transition: 0.3s all;
+  /* width: auto; */
+  background-color: #ffea00;
+  cursor: pointer;
+  border-radius: 3.5rem;
+  font-size: 1.3rem;
+  color: #323232;
+}
+
+.contactUs button:hover {
+  transition: 0.3s all;
+  background-color: #323232;
+  color: #fff;
+}
+
+.contactUs h1 {
+  margin-top: -7rem;
+  color: #fff;
+  margin-bottom: 5rem;
+  text-align: center;
+  font-size: 2.4rem;
 }

@@ -53,6 +53,67 @@ let price = [
     "11 to 20": 4000,
     "20+": "4000+",
   },
+  {
+    "Custom Logo": 500,
+  },
+  {
+    "Licensed Images": 2000,
+  },
+  {
+    Chatbot: 5000,
+  },
+  {
+    "Google AdSense": 5000,
+  },
+  {
+    "Domain Registration": 700,
+  },
+  {
+    "Business Email": 700,
+  },
+  {
+    "Downloadable Media": 2000,
+  },
+  {
+    "Site Analytics": 5000,
+  },
+  {
+    "SSL Encryption": 1000,
+  },
+  {
+    "Multi Language": 5000,
+  },
+  {
+    "Editable Content": 5000,
+  },
+  {
+    "Basic OnSite SEO": 2000,
+  },
+  {
+    "Polls and Surveys": 2000,
+  },
+  {
+    "Hosting (1 YR)": 10000,
+  },
+  {
+    "REST API": 5000,
+  },
+  {
+    "SMS Sending Functionality": 10000,
+  },
+  {
+    "Email Sending Functionality": 5000,
+  },
+  {
+    "WhatsApp Integration": 10000,
+  },
+  {
+    "WhatsApp Chat Bot": 20000,
+  },
+  {
+    "Google WorkSpace": 5000,
+  },
+  //   7696027293
 ];
 const type = document.querySelectorAll(".type .active");
 // console.log(type);
@@ -228,6 +289,36 @@ document.querySelectorAll(".copy .active").forEach((i) => {
     // console.log(i.textContent);
   });
 });
+const extras = (cnm) => {
+  document.querySelector(`.extra${cnm}`).addEventListener("click", () => {
+    if (selected[7 + cnm] == "" || selected[7 + cnm] == undefined) {
+      selected[7 + cnm] = document.querySelector(`.extra${cnm}`).textContent;
+    } else {
+      selected[7 + cnm] = "";
+    }
+  });
+};
+
+extras(1);
+extras(2);
+extras(3);
+extras(4);
+extras(5);
+extras(6);
+extras(7);
+extras(8);
+extras(9);
+extras(10);
+extras(11);
+extras(12);
+extras(13);
+extras(14);
+extras(15);
+extras(16);
+extras(17);
+extras(18);
+extras(19);
+extras(20);
 
 console.log(selected);
 document.querySelectorAll("button").forEach((i) => {
@@ -236,62 +327,61 @@ document.querySelectorAll("button").forEach((i) => {
     console.log("ys");
     let cost = 0;
     selected.forEach((j) => {
-      if (j != "") {
-        let ol = 0;
-        console.log();
-        let currentPrice = price[selected.indexOf(j)];
-        //   let j.split(":").slice(1)[0].slice(1) = j.split(":").slice(1)[0].slice(1);
-        //   console.log(typeof currentPrice[j.split(":").slice(1)[0].slice(1)]);
-
-        if (
-          typeof currentPrice[j.split(":").slice(1)[0].slice(1)] == "string"
-        ) {
-          console.log(ol, "yesss");
+      if (selected.indexOf(j) <= 7) {
+        if (j != "") {
+          let currentPrice = price[selected.indexOf(j)];
           if (
-            currentPrice[j.split(":").slice(1)[0].slice(1)].includes("Page")
+            typeof currentPrice[j.split(":").slice(1)[0].slice(1)] == "string"
           ) {
-            //   console.log("selected: ", selected[1]);
-            //   console.log(selected[1].split(": ")[1].split("-")[0]);
-            //   console.log("Page: ", selected[1]);
-            if (selected[1].includes("+")) {
-              console.log(Number(selected[1].split("+")[0]));
-              cost += 500 * Number(selected[1].split(": ")[1].split("+")[0]);
-            } else {
-              cost += 500 * Number(selected[1].split(": ")[1].split("-")[0]);
+            if (
+              currentPrice[j.split(":").slice(1)[0].slice(1)].includes("Page")
+            ) {
+              if (selected[1].includes("+")) {
+                console.log(Number(selected[1].split("+")[0]));
+                cost += 500 * Number(selected[1].split(": ")[1].split("+")[0]);
+              } else {
+                cost += 500 * Number(selected[1].split(": ")[1].split("-")[0]);
+              }
+            } else if (
+              currentPrice[j.split(":").slice(1)[0].slice(1)].includes("+")
+            ) {
+              console.log(currentPrice[j.split(":").slice(1)[0].slice(1)]);
+              cost += Number(
+                currentPrice[j.split(":").slice(1)[0].slice(1)].split("+")[0]
+              );
             }
-          } else if (
-            currentPrice[j.split(":").slice(1)[0].slice(1)].includes("+")
-          ) {
-            console.log(currentPrice[j.split(":").slice(1)[0].slice(1)]);
-            cost += Number(
-              currentPrice[j.split(":").slice(1)[0].slice(1)].split("+")[0]
-            );
-            //   console.log("+", selected[1].split(": ")[1].split("+")[0]);
-            // selected[selected.indexOf(j)].split(": ")[1].split("+")[0];
-            // cost+=selected(": ")[1].split("+")
-            //   cost += Number(currentPrice[j.split(":").slice(1)[0].slice(1)].split("+")[0]);
+            // ol += 1;
+          } else {
+            cost += Number(currentPrice[j.split(":").slice(1)[0].slice(1)]);
           }
-          //  else {
-          // }
-          ol += 1;
-        } else {
-          cost += Number(currentPrice[j.split(":").slice(1)[0].slice(1)]);
-        }
-        //   console.log(currentPrice[j.split(":").slice(1)[0].slice(1)]);
-        //   console.log(j.split(":").slice(1)[0].slice(1).slice(1));
-        //   for (let l of j.split(":").slice(1)[0].slice(1)) {
-        //     console.log(l);
-        //   }
-        document.querySelector(".summary").insertAdjacentHTML(
-          "beforeend",
-          `<div class="webSummary">
+          document.querySelector(".summary").insertAdjacentHTML(
+            "beforeend",
+            `<div class="webSummary">
                 <p>${j}</p>
                 <p>${currentPrice[j.split(":").slice(1)[0].slice(1)]} rs</p>
            </div>
             `
-        );
-        console.log("Cost ", cost);
+          );
+        }
+      } else {
+        if (j != "") {
+          //   console.log(j);
+          //   console.log(price[selected.indexOf(j)][j]);
+          cost += price[selected.indexOf(j)][j];
+          document.querySelector(".summary").insertAdjacentHTML(
+            "beforeend",
+            `<div class="webSummary">
+                <p>${j}</p>
+                <p>${price[selected.indexOf(j)][j]} rs</p>
+           </div>
+            `
+          );
+        }
       }
+      // cost += price[selected.indexOf(j)][j];
+      document.querySelector(".price").textContent = cost;
+
+      console.log("Cost ", cost);
     });
   });
 });
