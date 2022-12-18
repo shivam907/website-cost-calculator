@@ -8,27 +8,27 @@ $(function () {
 
 let price = [
   {
-    Static: 1000,
-    Dynamic: 5000,
-    "News / Blog": 10000,
-    "One Page": 800,
-    "E commerce": 20000,
+    Static: 5000,
+    Dynamic: 10000,
+    "News / Blog": 30000,
+    "One Page": 3000,
+    "E commerce": 50000,
   },
   {
     1: 0,
-    "2-5": 2000,
-    "6-10": 4000,
-    "11-20": 10000,
-    "21-50": 30000,
-    "50+": "30000+",
+    "2-5": 5000,
+    "6-10": 10000,
+    "11-20": 30000,
+    "21-50": 50000,
+    "50+": "50000+",
   },
   {
-    Yes: "500 / Page",
+    Yes: "1000 / Page",
   },
   {
-    "Simple & Attractive": 500,
-    "Moderately Styled": 2000,
-    "High End": 5000,
+    "Simple & Attractive": 1000,
+    "Moderately Styled": 5000,
+    "High End": 10000,
     "World Class": 20000,
   },
   {
@@ -43,18 +43,18 @@ let price = [
   },
   {
     "1 keyword": 1000,
-    "2 to 4 keywords": 2000,
-    "5 to 10 keywords": 5000,
-    "10+ keywords": "5000+",
+    "2 to 4 keywords": 3000,
+    "5 to 10 keywords": 7500,
+    "10+ keywords": "7500+",
   },
   {
-    "1 to 4": 1000,
-    "5 to 10": 2000,
-    "11 to 20": 4000,
-    "20+": "4000+",
+    1: 2000,
+    "1 to 5": 10000,
+    "5 to 15": 20000,
+    "15+": "20000+",
   },
   {
-    "Custom Logo": 500,
+    "Custom Logo": 2000,
   },
   {
     "Licensed Images": 2000,
@@ -75,7 +75,7 @@ let price = [
     "Downloadable Media": 2000,
   },
   {
-    "Site Analytics": 5000,
+    "Site Analytics": 2000,
   },
   {
     "SSL Encryption": 1000,
@@ -84,7 +84,7 @@ let price = [
     "Multi Language": 5000,
   },
   {
-    "Editable Content": 5000,
+    "Editable Content": 2000,
   },
   {
     "Basic OnSite SEO": 2000,
@@ -99,10 +99,10 @@ let price = [
     "REST API": 5000,
   },
   {
-    "SMS Sending Functionality": 10000,
+    "SMS Sending Functionality": 5000,
   },
   {
-    "Email Sending Functionality": 5000,
+    "Email Sending Functionality": 2000,
   },
   {
     "WhatsApp Integration": 10000,
@@ -338,9 +338,9 @@ document.querySelectorAll("button").forEach((i) => {
             ) {
               if (selected[1].includes("+")) {
                 console.log(Number(selected[1].split("+")[0]));
-                cost += 500 * Number(selected[1].split(": ")[1].split("+")[0]);
+                cost += 1000 * Number(selected[1].split(": ")[1].split("+")[0]);
               } else {
-                cost += 500 * Number(selected[1].split(": ")[1].split("-")[0]);
+                cost += 1000 * Number(selected[1].split(": ")[1].split("-")[0]);
               }
             } else if (
               currentPrice[j.split(":").slice(1)[0].slice(1)].includes("+")
